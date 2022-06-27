@@ -1,4 +1,5 @@
 // ---------------------- VARIABLES -------------------------- //
+
 const addBtn = document.querySelector('#addBtn');
 const title = document.querySelector('#titleId');
 const author = document.querySelector('#authorId');
@@ -6,6 +7,7 @@ const bookUl = document.querySelector('#books')
 
 
 // ------------------------ DATA ----------------------------- //
+
 let booksData = []
 
 // ------------------------ FUNCTIONS ------------------------ //
@@ -54,7 +56,6 @@ addBtn.addEventListener('click', () => {
 
   // ---------------------- LOCAL STORAGE ---------------------- //
 
-  
   window.addEventListener('load', () => {
     if (localStorage.getItem('books')) {
       booksData = JSON.parse(localStorage.getItem('books'));
@@ -62,7 +63,6 @@ addBtn.addEventListener('click', () => {
     for(let i = 0; i < booksData.length; i++) {
       loadBooks(i);
     }
-    localStorage.setItem('books', JSON.stringify(booksData));
   })
   
   
