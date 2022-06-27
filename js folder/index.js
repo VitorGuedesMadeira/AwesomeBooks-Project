@@ -4,27 +4,9 @@ const title = document.querySelector('#titleId');
 const author = document.querySelector('#authorId');
 const bookUl = document.querySelector('#books')
 
-// ---------------------- LOCAL STORAGE ---------------------- //
-
-bookUl.addEventListener('input', () => {
-  localStorage.setItem('title', `${title.value}`);
-  localStorage.setItem('author', `${author.value}`);
-});
-
-title.value = localStorage.getItem('nameValue');
-author.value = localStorage.getItem('emailValue');
 
 // ------------------------ DATA ----------------------------- //
-const booksData = [
-{
-  title: 'test',
-  author: 'test'
-},
-{
-  title: 'test2',
-  author: 'test2'
-}
-]
+let booksData = []
 
 // ------------------------ FUNCTIONS ------------------------ //
 function BookConstructor(title, author){
@@ -53,6 +35,7 @@ function loadBooks(index) {
   deleteBtn.addEventListener('click', (e) => {
     booksData.splice(index, 1);
     bookUl.removeChild(bookLi);
+    localStorage.setItem('books', JSON.stringify(booksData));
   })
 }
 
@@ -66,8 +49,21 @@ addBtn.addEventListener('click', () => {
   let addNewBook = new BookConstructor(titleName, authorName);
   booksData.push(addNewBook);
   loadBooks(booksData.length-1);
+  localStorage.setItem('books', JSON.stringify(booksData));
 })
 
-for(let i = 0; i < booksData.length; i++) {
-  loadBooks(i)
-}
+  // ---------------------- LOCAL STORAGE ---------------------- //
+
+  
+  window.addEventListener('load', () => {
+    if (localStorage.getItem('books')) {
+      booksData = JSON.parse(localStorage.getItem('books'));
+    }
+    for(let i = 0; i < booksData.length; i++) {
+      loadBooks(i);
+    }
+    localStorage.setItem('books', JSON.stringify(booksData));
+  })
+  
+  
+ 
