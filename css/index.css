@@ -100,3 +100,38 @@ input {
   background-color: darkgrey;
   transition-duration: 0.5s;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 12px 24px;
+  border: 3px solid black;
+}
+
+.navbar {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar-a {
+  text-decoration: none;
+  padding: 12px;
+  color: black;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+.navbar-a:nth-child(2) {
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+}
+
+.navbar-a:hover > li{
+  color: #55f;
+  transform: scale(1.1);
+}
+
+.hide {
+  display: none !important;
+}

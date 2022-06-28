@@ -12,6 +12,23 @@
 
     </header>
     <main>
+      <header class="header">
+        <p>awesome books</p>
+        <nav>
+          <ul class="navbar">
+            <a href="#booksCollection" class="navbar-a list">
+              <li>List</li>
+            </a>
+            <a href="#newBookSection" class="navbar-a newBook">
+              <li>Add new</li>
+            </a>
+            <a href="#contactForm" class="navbar-a contactForm">
+              <li>Contact us</li>
+            </a>
+          </ul>
+        </nav>
+      </header>
+    
         <section id="booksCollection">
             <h1>All awesome Books</h1>
             <ul id="books">
@@ -19,16 +36,21 @@
             </ul>
         </section>
 
-        <div id="newBookSection">
+        <div id="newBookSection" class="hide">
             <h2>Add a new book</h2>
             <input id="titleId" type="text" placeholder="Title">
             <input id="authorId" type="text" placeholder="Author">
             <div class="addBtnSide"><button id="addBtn">Add</button></div>
         </div>
+
+        <div id="contactForm" class="hide">
+
+        </div>
     </main>
     <footer>
-
+      <p>copyright</p>
     </footer>
 <script src="./js/index.js"></script>
+<script src="./js/pagesInteraction.js"></script>
 </body>
 </html>
