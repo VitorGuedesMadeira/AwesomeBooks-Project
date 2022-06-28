@@ -1,24 +1,26 @@
-// ---------------------- VARIABLES -------------------------- //
+// ------------------------ VARIABLES -------------------------- //
 const addBtn = document.querySelector('#addBtn');
 const title = document.querySelector('#titleId');
 const author = document.querySelector('#authorId');
 const bookUl = document.querySelector('#books');
 
-// ------------------------ DATA ----------------------------- //
-let booksData = [];
+// -------------------------- DATA ----------------------------- //
+class booksDataClass {
+  constructor() {
+    return []
+  }
+}
+let booksData = new booksDataClass();
 
-// ------------------------ FUNCTIONS ------------------------ //
-/* function BookConstructor(title, author) {
-  this.title = title;
-  this.author = author;
-} */
-
+// ------------------- CLASSES/FUNCTIONS ----------------------- //
 class BookConstructor {
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
+}
 
+class Dynamic {
   static loadBooks(index) {
     // creatingElements
     const bookLi = document.createElement('li');
@@ -61,7 +63,7 @@ addBtn.addEventListener('click', () => {
   author.value = '';
   const addNewBook = new BookConstructor(titleName, authorName);
   booksData.push(addNewBook);
-  BookConstructor.loadBooks(booksData.length - 1);
+  Dynamic.loadBooks(booksData.length - 1);
   localStorage.setItem('books', JSON.stringify(booksData));
 });
 
@@ -71,6 +73,6 @@ window.addEventListener('load', () => {
     booksData = JSON.parse(localStorage.getItem('books'));
   }
   for (let i = 0; i < booksData.length; i += 1) {
-    BookConstructor.loadBooks(i);
+    Dynamic.loadBooks(i);
   }
 });
