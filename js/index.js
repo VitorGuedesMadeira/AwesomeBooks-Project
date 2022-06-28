@@ -18,9 +18,7 @@ class BookConstructor {
     this.title = title;
     this.author = author;
   }
-}
 
-class Dynamic {
   static loadBooks(index) {
     // creatingElements
     const bookLi = document.createElement('li');
@@ -63,10 +61,9 @@ addBtn.addEventListener('click', () => {
   author.value = '';
   const addNewBook = new BookConstructor(titleName, authorName);
   booksData.push(addNewBook);
-  Dynamic.loadBooks(booksData.length - 1);
+  BookConstructor.loadBooks(booksData.length - 1);
   localStorage.setItem('books', JSON.stringify(booksData));
 });
-
 
 // ---------------------- LOCAL STORAGE ---------------------- //
 window.addEventListener('load', () => {
@@ -74,6 +71,6 @@ window.addEventListener('load', () => {
     booksData = JSON.parse(localStorage.getItem('books'));
   }
   for (let i = 0; i < booksData.length; i += 1) {
-    Dynamic.loadBooks(i);
+    BookConstructor.loadBooks(i);
   }
 });
