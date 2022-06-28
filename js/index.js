@@ -44,9 +44,7 @@ class Dynamic {
     deleteBtn.setAttribute('id', index);
     deleteBtn.setAttribute('class', 'buttons');
     divTitleAndAuthor.setAttribute('class', 'displayFlex');
-    if(index%2==1){
-      bookLi.setAttribute('class', 'liStyles backgroundTransparent')
-    }
+    
     deleteBtn.addEventListener('click', () => {
       booksData.splice(index, 1);
       bookUl.removeChild(bookLi);
