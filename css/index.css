@@ -2,4 +2,101 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
+}
+
+main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  padding: 25px;
+}
+
+#booksCollection {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  gap: 50px;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.displayFlex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 80%;
+}
+
+.liStyles {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(208, 208, 208);
+  padding: 5px 10px;
+}
+
+.liStyles:nth-child(even) {
+  background-color: transparent;
+}
+
+.buttons {
+  padding: 5px 10px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 5px black;
+  font-weight: 900;
+  height: 40px;
+}
+
+#newBookSection {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#newBookSection > * {
+  margin: auto;
+  width: 50%;
+}
+
+input {
+  border: 3px solid black;
+  padding: 5px;
+}
+
+#addBtn {
+  padding: 5px 10px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 5px black;
+  width: 50px;
+  font-weight: 900;
+}
+
+.addBtnSide {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#addBtn:hover {
+  transform: scale(1.05);
+  background-color: darkgrey;
+  transition-duration: 0.5s;
+}
+
+.buttons:hover {
+  transform: scale(1.05);
+  background-color: darkgrey;
+  transition-duration: 0.5s;
 }
