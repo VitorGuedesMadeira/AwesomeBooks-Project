@@ -76,3 +76,9 @@ window.addEventListener('load', () => {
     Dynamic.loadBooks(i);
   }
 });
+
+// ------------------------ DATE ----------------------------- //
+const dateP = document.querySelector('.dateParagraph');
+const date = new Date();
+date.getDate;
+dateP.textContent =`${date}`

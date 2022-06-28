@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <header>
-
+    <header class="header">
+      <p>Awesome Books</p>
+      <nav>
+        <ul class="navbar">
+          <a href="#booksCollection" class="navbar-a list">
+            <li>List</li>
+          </a>
+          <a href="#newBookSection" class="navbar-a newBook">
+            <li>Add new</li>
+          </a>
+          <a href="#contactForm" class="navbar-a contactForm">
+            <li>Contact us</li>
+          </a>
+        </ul>
+      </nav>
     </header>
-    <main>
-      <header class="header">
-        <p>awesome books</p>
-        <nav>
-          <ul class="navbar">
-            <a href="#booksCollection" class="navbar-a list">
-              <li>List</li>
-            </a>
-            <a href="#newBookSection" class="navbar-a newBook">
-              <li>Add new</li>
-            </a>
-            <a href="#contactForm" class="navbar-a contactForm">
-              <li>Contact us</li>
-            </a>
-          </ul>
-        </nav>
-      </header>
-    
+
+    <main>  
+        <div class="date">
+            <small class="dateParagraph"></small>
+        </div>
+
         <section id="booksCollection">
             <h1>All awesome Books</h1>
             <ul id="books">
@@ -37,18 +38,25 @@
         </section>
 
         <div id="newBookSection" class="hide">
-            <h2>Add a new book</h2>
+            <h1>Add a new book</h2>
             <input id="titleId" type="text" placeholder="Title">
             <input id="authorId" type="text" placeholder="Author">
             <div class="addBtnSide"><button id="addBtn">Add</button></div>
         </div>
 
         <div id="contactForm" class="hide">
-
+            <h1>Contact information</h2>
+            <h2>Do you have any questions or you just want to say Hello? You can reach out to us!</h2>
+            <ul>
+              <li><p>Our e-mail: mail@mail.com</p></li>
+              <li><p>Our phone number: +55(51)985615374</p></li>
+              <li><p>Our address: Streetname 22, 123456 City, Country</p></li>
+            </ul>
         </div>
     </main>
-    <footer>
-      <p>copyright</p>
+
+    <footer class="footer">
+      <p>Copyright ...</p>
     </footer>
 <script src="./js/index.js"></script>
 <script src="./js/pagesInteraction.js"></script>
