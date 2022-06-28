@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 // ------------------------ VARIABLES -------------------------- //
 const addBtn = document.querySelector('#addBtn');
 const title = document.querySelector('#titleId');
@@ -5,12 +7,12 @@ const author = document.querySelector('#authorId');
 const bookUl = document.querySelector('#books');
 
 // -------------------------- DATA ----------------------------- //
-class booksDataClass {
+class BooksDataClass {
   constructor() {
-    return []
+    return [];
   }
 }
-let booksData = new booksDataClass();
+let booksData = new BooksDataClass();
 
 // ------------------- CLASSES/FUNCTIONS ----------------------- //
 class BookConstructor {
@@ -40,11 +42,11 @@ class Dynamic {
     bookLi.appendChild(deleteBtn);
     bookUl.appendChild(bookLi);
     // giving classes
-    bookLi.setAttribute('class', 'liStyles')
+    bookLi.setAttribute('class', 'liStyles');
     deleteBtn.setAttribute('id', index);
     deleteBtn.setAttribute('class', 'buttons');
     divTitleAndAuthor.setAttribute('class', 'displayFlex');
-    
+
     deleteBtn.addEventListener('click', () => {
       booksData.splice(index, 1);
       bookUl.removeChild(bookLi);
