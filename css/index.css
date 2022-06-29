@@ -9,15 +9,15 @@
 
 body {
   padding: 25px;
-  font-family: 'Lato', sans-serif;  font-weight: 900;
+  font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  background-image: url(/images/jon-r8AFUpRp0J0-unsplash.jpg);
+  background-image: url(../images/jon-r8AFUpRp0J0-unsplash.jpg);
   background-size: cover;
   background-position: center center;
-
+  font-weight: 900;
 }
 
 .header {
@@ -42,7 +42,7 @@ header p {
   list-style-type: none;
 }
 
-.navbar-a {
+.navbar a {
   text-decoration: none;
   padding: 12px;
   color: black;
@@ -52,13 +52,14 @@ header p {
   align-items: center;
   transition: all 0.2s;
 }
+
 .navbar-a:nth-child(2) {
   border-left: 2px solid grey;
   border-right: 2px solid grey;
 }
 
-.navbar-a:hover > li,
-.navbar-a:focus > li{
+.navbar-a:hover > a,
+.navbar-a:focus > a {
   color: rgba(139, 70, 176, 0.641);
   transform: scale(1.1);
 }
@@ -179,7 +180,6 @@ form input {
   display: none !important;
 }
 
-
 #contactForm {
   display: flex;
   flex-direction: column;
@@ -242,7 +242,7 @@ form input {
     font-weight: 700;
     font-size: 1em;
   }
-  
+
   .header {
     justify-content: center;
   }
@@ -254,8 +254,8 @@ form input {
   .date {
     font-size: 0.7em;
   }
-  
-  #newBookSection > *{
+
+  #newBookSection > * {
     width: 70%;
   }
 
