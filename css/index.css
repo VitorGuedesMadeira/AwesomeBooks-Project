@@ -13,11 +13,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../images/jon-r8AFUpRp0J0-unsplash.jpg);
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   font-weight: 900;
+  transition: background-image 2s;
 }
 
 .header {
@@ -137,6 +139,7 @@ form {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 25px;
+  width: 50%;
 }
 
 form input {
@@ -238,7 +241,19 @@ form input {
 
 @media screen and (max-width: 768px) {
   body {
-    background-position: bottom bottom;
+    background-image:
+      url(../images/cloudtest2.png),
+      url(../images/test4.png),
+      url(../images/jon-r8AFUpRp0J0-unsplash.jpg);
+    background-size:
+      cover,
+      cover,
+      cover;
+    background-position:
+      center center,
+      center center,
+      bottom bottom;
+    transition: background-image 3s;
   }
 
   #addBtn {
