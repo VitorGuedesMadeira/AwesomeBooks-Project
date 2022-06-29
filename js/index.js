@@ -4,6 +4,7 @@
 const addBtn = document.querySelector('#addBtn');
 const title = document.querySelector('#titleId');
 const author = document.querySelector('#authorId');
+const error = document.querySelector('#error')
 const bookUl = document.querySelector('#books');
 
 // -------------------------- DATA ----------------------------- //
@@ -55,19 +56,53 @@ class Dynamic {
   }
 }
 
+// ------------------------ VALIDATIONS ----------------------------- //
+
+let showmessage = (test, msg) => {
+  if(test) {
+    error.textContent = msg;
+    return test
+  }else {
+    error.textContent = msg;
+    return test
+  }
+}
+
+let validations = (input, msg, input2, msg2) => {
+  if(input.trim() === '') {
+    console.log(' 1space in blank')
+    showmessage(false, msg)
+  }else if(input2.trim() === ''){
+    console.log('2 space in blank')
+    showmessage(false, msg2)
+  }else {
+    console.log('space is not in blank')
+    return showmessage(true, '')
+  }
+}
+
 // ----------------------- EVENT LISTENER ------------------- //
+
 addBtn.addEventListener('click', () => {
   const titleName = title.value;
   const authorName = author.value;
-  title.value = '';
-  author.value = '';
-  const addNewBook = new BookConstructor(titleName, authorName);
-  booksData.push(addNewBook);
-  Dynamic.loadBooks(booksData.length - 1);
-  localStorage.setItem('books', JSON.stringify(booksData));
+  const titleMsg = 'title space is in blank';
+  const authorMsg = 'author space is in blank';
+
+  if(validations(titleName, titleMsg, authorName, authorMsg)) {
+    console.log('this was added')
+    const addNewBook = new BookConstructor(titleName, authorName);
+    booksData.push(addNewBook);
+    Dynamic.loadBooks(booksData.length - 1);
+    localStorage.setItem('books', JSON.stringify(booksData));
+    title.value = '';
+    author.value = '';
+  }
+
 });
 
 // ---------------------- LOCAL STORAGE ---------------------- //
+
 window.addEventListener('load', () => {
   if (localStorage.getItem('books')) {
     booksData = JSON.parse(localStorage.getItem('books'));
