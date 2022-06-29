@@ -4,7 +4,7 @@ const navA = document.querySelectorAll('.navbar-a');
 const navAList = Array.from(navA);
 const booksSection = document.querySelector('#booksCollection');
 const newBookSection = document.querySelector('#newBookSection');
-const contactForm = document.querySelector('#contactForm'); 
+const contactForm = document.querySelector('#contactForm');
 
 navAList.forEach((child) => {
   if (child.classList.contains('list')) {
