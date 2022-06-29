@@ -84,7 +84,7 @@ h1 {
 #books {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   border-radius: 5px;
   width: 100%;
   overflow: hidden;
@@ -115,7 +115,7 @@ h1 {
 
 .buttons {
   padding: 5px 10px;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   font-weight: 900;
   height: 40px;
@@ -143,14 +143,14 @@ form {
 
 form input {
   width: 100%;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   padding: 15px;
   border-radius: 5px;
 }
 
 #addBtn {
   padding: 5px 10px;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   width: 100px;
   font-weight: 700;
@@ -287,7 +287,6 @@ form input {
   #contactForm {
     padding: 0 25px;
   }
-
 }
 
 @media screen and (max-width: 410px) {
