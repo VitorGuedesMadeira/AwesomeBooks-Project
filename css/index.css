@@ -13,11 +13,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../images/jon-r8AFUpRp0J0-unsplash.jpg);
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   font-weight: 900;
+  transition: background-image 2s;
 }
 
 .header {
@@ -25,7 +27,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  border: 3px solid black;
   background-color: rgba(255, 255, 255, 0.736);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
@@ -83,7 +84,7 @@ h1 {
 #books {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   border-radius: 5px;
   width: 100%;
   overflow: hidden;
@@ -114,7 +115,7 @@ h1 {
 
 .buttons {
   padding: 5px 10px;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   font-weight: 900;
   height: 40px;
@@ -136,19 +137,20 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 50px;
+  gap: 25px;
+  width: 50%;
 }
 
 form input {
   width: 100%;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   padding: 15px;
   border-radius: 5px;
 }
 
 #addBtn {
   padding: 5px 10px;
-  border: 3px solid black;
+  border: 2px solid rgb(70, 60, 77);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   width: 100px;
   font-weight: 700;
@@ -176,6 +178,13 @@ form input {
   transition-duration: 0.5s;
 }
 
+#error {
+  color: rgb(194, 54, 54);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .hide {
   display: none !important;
 }
@@ -186,7 +195,7 @@ form input {
   align-items: center;
   gap: 50px;
   padding: 0 130px;
-  height: 65vh;
+  min-height: 65vh;
   transition: all 0.3s;
   animation: books 1.5s;
 }
@@ -205,7 +214,6 @@ form input {
 
 .footer {
   padding: 12px 24px;
-  border: 3px solid black;
   background-color: rgba(255, 255, 255, 0.736);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
@@ -231,13 +239,23 @@ form input {
 
 @media screen and (max-width: 768px) {
   body {
-    background-position: bottom bottom;
+    background-image:
+      url(../images/cloudtest2.png),
+      url(../images/test4.png),
+      url(../images/jon-r8AFUpRp0J0-unsplash.jpg);
+    background-size:
+      cover,
+      cover,
+      cover;
+    background-position:
+      center center,
+      center center,
+      bottom bottom;
+    transition: background-image 3s;
   }
 
   #addBtn {
     padding: 5px 10px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     width: auto;
     font-weight: 700;
     font-size: 1em;
@@ -256,6 +274,10 @@ form input {
   }
 
   #newBookSection {
+<<<<<<< HEAD
+=======
+    gap: 25px;
+>>>>>>> f2ccbdcd6bfbd56221f73a5e9e09280abbb26a22
     margin-bottom: 20px;
   }
 

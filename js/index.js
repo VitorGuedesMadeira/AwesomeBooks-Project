@@ -4,6 +4,7 @@
 const addBtn = document.querySelector('#addBtn');
 const title = document.querySelector('#titleId');
 const author = document.querySelector('#authorId');
+const error = document.querySelector('#error');
 const bookUl = document.querySelector('#books');
 
 // -------------------------- DATA ----------------------------- //
@@ -55,19 +56,46 @@ class Dynamic {
   }
 }
 
+// ------------------------ VALIDATIONS ----------------------------- //
+
+const showmessage = (test, msg) => {
+  if (test) {
+    error.textContent = msg;
+    return test;
+  }
+  error.textContent = msg;
+  return test;
+};
+
+const validations = (input, msg, input2, msg2) => {
+  if (input.trim() === '') {
+    return showmessage(false, msg);
+  } if (input2.trim() === '') {
+    return showmessage(false, msg2);
+  }
+  return showmessage(true, '');
+};
+
 // ----------------------- EVENT LISTENER ------------------- //
+
 addBtn.addEventListener('click', () => {
   const titleName = title.value;
   const authorName = author.value;
-  title.value = '';
-  author.value = '';
-  const addNewBook = new BookConstructor(titleName, authorName);
-  booksData.push(addNewBook);
-  Dynamic.loadBooks(booksData.length - 1);
-  localStorage.setItem('books', JSON.stringify(booksData));
+  const titleMsg = 'title space is in blank';
+  const authorMsg = 'author space is in blank';
+
+  if (validations(titleName, titleMsg, authorName, authorMsg)) {
+    const addNewBook = new BookConstructor(titleName, authorName);
+    booksData.push(addNewBook);
+    Dynamic.loadBooks(booksData.length - 1);
+    localStorage.setItem('books', JSON.stringify(booksData));
+    title.value = '';
+    author.value = '';
+  }
 });
 
 // ---------------------- LOCAL STORAGE ---------------------- //
+
 window.addEventListener('load', () => {
   if (localStorage.getItem('books')) {
     booksData = JSON.parse(localStorage.getItem('books'));
