@@ -27,4 +27,3 @@ navAList.forEach(child => {
       });
     }
   });
-

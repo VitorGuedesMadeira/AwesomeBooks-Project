@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +9,15 @@
 
 body {
   padding: 25px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 900;
+  font-family: 'Lato', sans-serif;  font-weight: 900;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  background-image: url(/images/jon-r8AFUpRp0J0-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+
 }
 
 .header {
@@ -20,6 +26,14 @@ body {
   align-items: center;
   padding: 12px 24px;
   border: 3px solid black;
+  background-color: rgba(255, 255, 255, 0.736);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+header p {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em;
 }
 
 .navbar {
@@ -43,8 +57,9 @@ body {
   border-right: 2px solid grey;
 }
 
-.navbar-a:hover > li{
-  color: rgb(208, 144, 208);
+.navbar-a:hover > li,
+.navbar-a:focus > li{
+  color: rgba(139, 70, 176, 0.641);
   transform: scale(1.1);
 }
 
@@ -54,11 +69,14 @@ body {
   height: 65vh;
   gap: 50px;
   transition: all 1s;
+  animation: books 1.5s;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   text-align: center;
+  font-family: 'Lobster', cursive;
+  text-shadow: 0 0 30px white;
 }
 
 #books {
@@ -70,6 +88,8 @@ h1 {
   overflow: hidden;
   overflow-y: scroll;
   max-height: 306px;
+  background-color: rgba(255, 255, 255, 0.736);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 .displayFlex {
@@ -83,7 +103,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: rgb(208, 144, 208);
+  background-color: rgba(173, 144, 208, 0.84);
   padding: 5px 10px;
 }
 
@@ -94,9 +114,11 @@ h1 {
 .buttons {
   padding: 5px 10px;
   border: 3px solid black;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   font-weight: 900;
   height: 40px;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, rgba(128, 0, 128, 0.454), transparent);
 }
 
 #newBookSection {
@@ -106,6 +128,7 @@ h1 {
   align-items: center;
   gap: 100px;
   height: 65vh;
+  animation: books 1.5s;
 }
 
 form {
@@ -119,15 +142,18 @@ form input {
   width: 100%;
   border: 3px solid black;
   padding: 15px;
+  border-radius: 5px;
 }
 
 #addBtn {
   padding: 5px 10px;
   border: 3px solid black;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
   width: 100px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.4em;
+  border-radius: 5px;
+  background-image: linear-gradient(to top, rgba(128, 0, 128, 0.454), transparent);
 }
 
 .addBtnSide {
@@ -135,15 +161,17 @@ form input {
   flex-direction: row-reverse;
 }
 
-#addBtn:hover {
+#addBtn:hover,
+#addBtn:focus {
   transform: scale(1.05);
-  background-color: darkgrey;
+  background-color: rgba(139, 70, 176, 0.641);
   transition-duration: 0.5s;
 }
 
-.buttons:hover {
+.buttons:hover,
+.buttons:focus {
   transform: scale(1.05);
-  background-color: darkgrey;
+  background-color: rgba(139, 70, 176, 0.641);
   transition-duration: 0.5s;
 }
 
@@ -160,6 +188,7 @@ form input {
   padding: 0 130px;
   height: 65vh;
   transition: all 0.3s;
+  animation: books 1.5s;
 }
 
 #contactForm ul {
@@ -177,15 +206,40 @@ form input {
 .footer {
   padding: 12px 24px;
   border: 3px solid black;
+  background-color: rgba(255, 255, 255, 0.736);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.buttons:active {
+  transform: scale(0.97);
+}
+
+#addBtn:active {
+  transform: scale(0.97);
+}
+
+@keyframes books {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    background-position: bottom bottom;
+  }
+
   #addBtn {
     padding: 5px 10px;
     border: 3px solid black;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     width: auto;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1em;
   }
   
