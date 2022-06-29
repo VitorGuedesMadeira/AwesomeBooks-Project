@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <header>
-
+    <header class="header">
+      <p>Awesome Books</p>
+      <nav>
+        <ul class="navbar">
+          <li class="navbar-a list"><a href="#booksCollection">List</a></li>
+          <li class="navbar-a newBook"><a href="#newBookSection">Add new</a></li>
+          <li class="navbar-a contactForm"><a href="#contactForm">Contact us</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
+
+    <main>  
+        <div class="date">
+            <small class="dateParagraph"></small>
+        </div>
+
         <section id="booksCollection">
             <h1>All awesome Books</h1>
             <ul id="books">
@@ -19,16 +31,30 @@
             </ul>
         </section>
 
-        <div id="newBookSection">
-            <h2>Add a new book</h2>
-            <input id="titleId" type="text" placeholder="Title">
-            <input id="authorId" type="text" placeholder="Author">
-            <div class="addBtnSide"><button id="addBtn">Add</button></div>
+        <div id="newBookSection" class="hide">
+            <h1>Add a new book</h1>
+              <form>
+                <input id="titleId" type="text" placeholder="Title">
+                <input id="authorId" type="text" placeholder="Author">
+                <div class="addBtnSide"><button id="addBtn">Add</button></div>
+              </form>
+        </div>
+
+        <div id="contactForm" class="hide">
+            <h1>Contact information</h1>
+            <h2>Do you have any questions or you just want to say Hello? You can reach out to us!</h2>
+            <ul>
+              <li><p>Our e-mail: mail@mail.com</p></li>
+              <li><p>Our phone number: +55(51)985615374</p></li>
+              <li><p>Our address: Streetname 22, 123456 City, Country</p></li>
+            </ul>
         </div>
     </main>
-    <footer>
 
+    <footer class="footer">
+      <p>Copyright © 2022 Vitor G. and Alejandro T.</p>
     </footer>
 <script src="./js/index.js"></script>
+<script src="./js/pagesInteraction.js"></script>
 </body>
 </html>
