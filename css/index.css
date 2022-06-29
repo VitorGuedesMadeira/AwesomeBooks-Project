@@ -256,8 +256,6 @@ form input {
 
   #addBtn {
     padding: 5px 10px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     width: auto;
     font-weight: 700;
     font-size: 1em;
